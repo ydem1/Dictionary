@@ -1,51 +1,13 @@
+import React from 'react';
+import { Dictionaries } from '../../../types/Dictionary';
 import './dictionary.scss';
 
-export const Dictionary = () => {
-  const dictionary = [
-    {
-      ukr: 'собака',
-      eng: 'dog',
-    },
-    {
-      ukr: 'кіт',
-      eng: 'cat',
-    },
-    {
-      ukr: 'птах',
-      eng: 'bird',
-    },
-    {
-      ukr: 'кролик',
-      eng: 'rabbit',
-    },
-    {
-      ukr: 'олень',
-      eng: 'deer',
-    },
-    {
-      ukr: 'мавпа',
-      eng: 'monkey',
-    },
-    {
-      ukr: 'слон',
-      eng: 'elephant',
-    },
-    {
-      ukr: 'тигр',
-      eng: 'tiger',
-    },
-    {
-      ukr: 'ведмідь',
-      eng: 'bear',
-    },
-    {
-      ukr: 'лисиця',
-      eng: 'fox',
-    },
-  ];
+type Props = {
+  name: string,
+  dictionary: Dictionaries[],
+}
 
-  const name = 'new dictionary';
-
+export const Dictionary: React.FC<Props> = ({ name, dictionary }) => {
   return (
     <article className="dictionary">
       <h3 className="dictionary__name">
@@ -63,7 +25,10 @@ export const Dictionary = () => {
           </h4>
         </li>
         {dictionary.map(item => (
-          <li className="dictionary__words">
+          <li
+            key={`id:${item.eng}${item.ukr}`}
+            className="dictionary__words"
+          >
             <p className="dictionary__eng">
               {item.eng}
             </p>
