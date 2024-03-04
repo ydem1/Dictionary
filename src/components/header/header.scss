@@ -1,0 +1,32 @@
+@import '../../../style/utils.scss';
+
+.header {
+  border-bottom: 0.5px solid $divider-color;
+
+  &__logo {
+    font-size: 14px;
+    line-height: 20px;
+    font-family: $manrope-medium;
+    margin-bottom: 20px;
+  }
+
+  &__list {
+    display: flex;
+    gap: 32px;
+  }
+
+  &__item {
+    color: $secondary-color;
+    font-size: 12px;
+    font-family: $manrope-regular;
+    line-height: 20px;
+    text-transform: uppercase;
+  }
+
+  &__link {
+    &--isActive {
+      border-bottom: 2px solid $accents-color;
+      color: $main-text-color;
+    }
+  }
+}
