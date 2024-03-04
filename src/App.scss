@@ -1,3 +1,5 @@
+@import './style/utils.scss';
+
 .App {
   display: flex;
   flex-direction: column;
@@ -8,4 +10,14 @@
 
 .App__Main {
   flex: 1 1 auto;
+}
+
+section {
+  margin: 16px;
+
+  @include onDesktop() {
+    margin-block: 64px;
+
+    grid-template-columns: repeat(4, 1fr);
+  }
 }

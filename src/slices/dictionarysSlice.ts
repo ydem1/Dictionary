@@ -49,29 +49,29 @@ const dictionaries = {
 
 
 export interface DictionarysState {
-  Dictionaries: Record<string, Dictionaries[]>,
+  value: Record<string, Dictionaries[]>,
 }
 
 const initialState: DictionarysState = {
-  Dictionaries: dictionaries
+  value: dictionaries
 }
 
 export const dictionarysSlice = createSlice({
   name: 'dictionarys',
   initialState,
   reducers: {
-    addNewDictionary: (state, action: PayloadAction<{ key: string; dictionary: { ukr: string; eng: string }[] }>) => {
-      const { key, dictionary } = action.payload;
+    initNewDictionary: (state, action: PayloadAction<{ key: string }>) => {
+      const { key } = action.payload;
 
-      if (state.Dictionaries[key]) {
+      if (state.value[key]) {
         throw new Error(`Dictionary with key ${key} already exists.`);
       }
 
-      state.Dictionaries[key] = dictionary;
+      state.value[key] = [];
     }
   },
 })
 
-export const { addNewDictionary } = dictionarysSlice.actions
+export const { initNewDictionary } = dictionarysSlice.actions
 
 export default dictionarysSlice.reducer

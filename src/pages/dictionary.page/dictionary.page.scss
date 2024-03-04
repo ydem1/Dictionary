@@ -6,8 +6,6 @@
     grid-template-columns: repeat(1, 1fr);
     gap: 8px;
 
-    margin: 16px;
-
     @include onTablet() {
       grid-template-columns: repeat(2, 1fr);
     }
@@ -17,8 +15,6 @@
     }
 
     @include onDesktop() {
-      margin-block: 64px;
-
       grid-template-columns: repeat(4, 1fr);
     }
   }

@@ -5,12 +5,13 @@ import './dictionary.scss';
 type Props = {
   name: string,
   dictionary: Dictionaries[],
+  background: string,
 }
 
-export const Dictionary: React.FC<Props> = ({ name, dictionary }) => {
+export const Dictionary: React.FC<Props> = ({ name, dictionary, background }) => {
   return (
     <article className="dictionary">
-      <h3 className="dictionary__name">
+      <h3 className="dictionary__name" style={{background: background}}>
         {name}
       </h3>
 
