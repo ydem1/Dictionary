@@ -1,11 +1,16 @@
-import React from "react";
+import { Dictionary } from "./components";
+
+import './dictionary.page.scss';
 
 export const DictionaryPage = () => {
   return (
-    <div className="dictionary-page">
-      <h1>
-        DictionaryPage
-      </h1>
-    </div>
+    <section className="dictionary-page">
+      <Dictionary />
+      <Dictionary />
+      <Dictionary />
+      <Dictionary />
+      <Dictionary />
+      <Dictionary />
+    </section>
   );
 };
