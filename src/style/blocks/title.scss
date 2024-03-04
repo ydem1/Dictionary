@@ -1,0 +1,22 @@
+.title {
+  margin: 0;
+
+  &--mobile {
+    color: $white-text-color;
+    text-transform: uppercase; 
+  }
+
+  &--h2 {
+    @extend %h2-style;
+    color: $main-black;
+
+    @include onTablet {
+      font-size: 40px;
+    }
+  }
+
+  &--h4 {
+    @extend %h4-style;
+    font-size: 13px;
+  }
+}

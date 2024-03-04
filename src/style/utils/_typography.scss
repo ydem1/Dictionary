@@ -1,0 +1,11 @@
+h1 {
+  @extend %h1-style;
+}
+
+h2 {
+  @extend %h2-style;
+}
+
+h3 {
+  @extend %h3-style;
+}
