@@ -18,7 +18,7 @@ export const Root = () => (
         <Route index element={<DictionaryPage />} />
         <Route path="/add" element={<AddPage />} />
         <Route path="/memorization" element={<MemorizationPage />} />
-        <Route path="/memorization/game" element={<Game />} />
+        <Route path="/memorization/game/:dictionary" element={<Game />} />
         <Route path="*" element={<NotFoundPage />} />
       </Route>
     </Routes>

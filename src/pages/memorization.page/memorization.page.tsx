@@ -1,17 +1,12 @@
 import { useSelector } from "react-redux";
 import { RootState } from "../../store/store";
-import { useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 import { colors } from "../../constants/colors";
 import './memorization.page.scss';
 
 export const MemorizationPage = () => {
   const dictionaries = useSelector((state: RootState) => state.dictionarys.value);
-  const navigate = useNavigate();
-
-  const handleStartGame = () => {
-    navigate('./game');
-  };
 
   return (
     <section className="memorization-page">
@@ -20,9 +15,16 @@ export const MemorizationPage = () => {
           <li
             key={name}
             className="list__item"
-            style={{ background: colors[index % colors.length] }}
+            style={{
+              background: colors[index % colors.length],
+              pointerEvents: dictionary.length <= 10 ? 'none' : 'auto',
+              opacity: dictionary.length <= 10 ? 4 / 10 : 1,
+            }}
           >
-            <button onClick={handleStartGame} className="list__btn">
+            <Link
+              to={`./game/${name}`}
+              className="list__btn"
+            >
               <h3 className="list__name">
                 {name}
               </h3>
@@ -30,7 +32,7 @@ export const MemorizationPage = () => {
               <p className="list__count-words">
                 {dictionary.length}
               </p>
-            </button>
+            </Link>
           </li>
         ))}
       </ul>

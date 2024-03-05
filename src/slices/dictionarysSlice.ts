@@ -14,7 +14,14 @@ const dictionaries = {
     { ukr: 'тигр', eng: 'tiger' },
     { ukr: 'ведмідь', eng: 'bear' },
     { ukr: 'лисиця', eng: 'fox' },
-    { ukr: 'олень', eng: 'elk' }
+    { ukr: 'вовк', eng: 'wolf' },
+    { ukr: 'заєць', eng: 'hare' },
+    { ukr: 'кажан', eng: 'bat' },
+    { ukr: 'жираф', eng: 'giraffe' },
+    { ukr: 'носоріг', eng: 'rhinoceros' },
+    { ukr: 'бик', eng: 'bull' },
+    { ukr: 'конь', eng: 'horse' },
+    { ukr: 'корова', eng: 'cow' }
   ],
   food: [
     { ukr: 'яблуко', eng: 'apple' },
@@ -27,7 +34,9 @@ const dictionaries = {
     { ukr: 'груша', eng: 'pear' },
     { ukr: 'вишня', eng: 'cherry' },
     { ukr: 'виноград', eng: 'grape' },
-    { ukr: 'ананас', eng: 'pineapple' }
+    { ukr: 'ананас', eng: 'pineapple' },
+    { ukr: 'арбуз', eng: 'watermelon' },
+    { ukr: 'помідор', eng: 'tomato' }
   ],
   vacation: [
     { ukr: 'пляж', eng: 'beach' },
@@ -40,9 +49,18 @@ const dictionaries = {
     { ukr: 'відпустка', eng: 'vacation' },
     { ukr: 'екскурсія', eng: 'excursion' },
     { ukr: 'пісок', eng: 'sand' },
-    { ukr: 'курорт', eng: 'resort' }
+    { ukr: 'курорт', eng: 'resort' },
+    { ukr: 'пам\'ятник', eng: 'monument' },
+    { ukr: 'замок', eng: 'castle' },
+    { ukr: 'фонтан', eng: 'fountain' },
+    { ukr: 'аквапарк', eng: 'water park' },
+    { ukr: 'парк атракціонів', eng: 'amusement park' },
+    { ukr: 'ресторан', eng: 'restaurant' },
+    { ukr: 'пікнік', eng: 'picnic' },
+    { ukr: 'круїз', eng: 'cruise' }
   ]
 };
+
 
 export interface DictionarysState {
   value: Record<string, Dictionaries[]>,

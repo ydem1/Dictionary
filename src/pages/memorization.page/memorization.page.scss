@@ -10,7 +10,7 @@
   &__item {
     padding: 8px 16px 8px 16px;
     border-radius: 8px;
-    @include hover(transform, scale(1.1));
+    @include hover(transform, scale(1.03));
   }
 
   &__btn {

@@ -1,0 +1,133 @@
+@import '../../../style/utils.scss';
+
+.game {
+  position: relative;
+
+  &__article {
+    width: 100%;
+    max-width: 450px;
+    margin: 0 auto;
+  }
+
+  &__list {
+    display: flex;
+    overflow: hidden;
+  }
+
+  &__item {
+    flex: 0 0 100%;
+    transition: translate 500ms;
+  }
+
+  &__main {
+    box-shadow: 0px 2px 10px 2px rgba(61, 64, 76, 0.08);
+    margin-block: 16px 20px;
+    border-radius: 8px;
+  }
+
+  &__eng {
+    font-size: 50px;
+    font-family: $manrope-medium;
+    padding: 25px;
+
+    width: max-content;
+    margin: 0 auto;
+  }
+
+  &__name {
+    color: $white-text-color;
+    font-size: 18px;
+    font-family: $manrope-regular;
+
+    background-color: $backgroud-game-color;
+
+    text-align: center;
+
+    border-radius: 8px;
+    padding: 8px 16px;
+  }
+
+  &__bottom {
+    display: flex;
+    align-items: end;
+    justify-content: space-between;
+
+    border-radius: 8px;
+    padding: 16px;
+    box-shadow: 0px 2px 10px 2px rgba(61, 64, 76, 0.08);
+  }
+
+  &__btn-next {
+    border-radius: 8px;
+    padding: 8px;
+
+    color: $white-text-color;
+    background: $backgroud-btn-color;
+
+    &--disable {
+      opacity: 0.4;
+    }
+  }
+}
+
+.answers {
+  &__item {
+    display: flex;
+    gap: 10px;
+  }
+}
+
+.result {
+  position: absolute;
+  top: 10px;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 10;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  border-radius: 8px;
+
+  background-color: rgba(0, 0, 0, 0.5);
+
+  margin: auto;
+
+  &__box {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    background-color: $background-color;
+    width: 50%;
+    height: 50%;
+
+    box-shadow: 0px 2px 10px 2px rgba(61, 64, 76, 0.08);
+    border-radius: 8px;
+    padding: 26px;
+
+    color: rgb(28, 28, 28);
+    font-size: 24px;
+    font-family: $manrope-medium;
+  }
+
+  &__header {
+    display: flex;
+    justify-content: space-around;
+  }
+
+  &__controls {
+    display: flex;
+    justify-content: space-around;
+  }
+
+  &__btn-restart {
+    padding: 8px;
+    border-radius: 8px;
+
+    background-color: $backgroud-btn-color;
+    color: $white-text-color;
+  }
+}
