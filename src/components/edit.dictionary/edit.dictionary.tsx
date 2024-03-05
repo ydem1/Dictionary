@@ -21,6 +21,7 @@ export const EditDictionary: React.FC<Props> = ({ dictionaryKey, handleBtn }) =>
   const dispatch = useDispatch();
   const dictionary = dictionaries[dictionaryKey];
 
+
   const [engWord, setEngWord] = useState('');
   const [ukrWord, setUkrWord] = useState('');
 

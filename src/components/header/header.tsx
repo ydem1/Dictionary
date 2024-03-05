@@ -33,10 +33,10 @@ export const Header = () => {
           <li className="header__item">
             <NavLink
               className={isActiveCallback}
-              onClick={() => setTab('Add new word')}
+              onClick={() => setTab('Create new dictionary')}
               to="/add"
             >
-              Add new word
+              Create new dictionary
             </NavLink>
           </li>
 

@@ -1,5 +1,4 @@
 import { useState } from "react";
-// import { Dictionaries } from "../../types/Dictionary";
 import { Input } from "../../components/input";
 import { useDispatch, useSelector } from "react-redux";
 import { initNewDictionary } from "../../slices/dictionarysSlice";
@@ -7,9 +6,11 @@ import { RootState } from "../../store/store";
 
 import './add.scss';
 import { ControlPanel } from "../../components/control.panel";
+import { EditDictionary } from "../../components/edit.dictionary";
 
 export const AddPage = () => {
-  // const [newWords, setNewWords] = useState<Dictionaries[]>([]);
+  const [isEditDictionary, setIsEditDictionary] = useState(false);
+
   const Dictionareis = useSelector((state: RootState) => state.dictionarys.value)
   const dispatch = useDispatch();
 
@@ -19,12 +20,17 @@ export const AddPage = () => {
 
   const handleSubmit = () => {
     dispatch(initNewDictionary({ key: dictionaryName }));
-    handleReset();
+    setIsEditDictionary(true)
   };
 
   const handleReset = () => {
     setDictionaryName('');
   };
+
+  const handleClickBtn = () => {
+    setIsEditDictionary(false);
+    handleReset();
+  }
 
   return (
     <section className="add-page box">
@@ -43,6 +49,13 @@ export const AddPage = () => {
         handleReset={handleReset}
         isDisable={dictionaryName === '' || isError}
       />
+
+      {isEditDictionary &&
+        <EditDictionary
+          dictionaryKey={dictionaryName}
+          handleBtn={handleClickBtn}
+        />
+      }
     </section>
   );
 };
