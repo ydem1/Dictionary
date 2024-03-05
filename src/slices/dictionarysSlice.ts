@@ -94,11 +94,23 @@ export const dictionarysSlice = createSlice({
         ...state.value[key],
         words,
       ];
+    },
+    removeWordToDictionary: (state, action: PayloadAction<{ key: string; indexRemove: number }>) => {
+      const { key, indexRemove } = action.payload;
 
+      if (!state.value[key]) {
+        throw new Error(`Dictionary with key ${key} don't already exists.`);
+      }
+
+      const newWords = state.value[key].filter((_, index) => indexRemove !== index)
+
+      state.value[key] = [
+        ...newWords,
+      ];
     }
   },
 })
 
-export const { initNewDictionary, addWordToDictionary } = dictionarysSlice.actions
+export const { initNewDictionary, addWordToDictionary, removeWordToDictionary } = dictionarysSlice.actions
 
 export default dictionarysSlice.reducer

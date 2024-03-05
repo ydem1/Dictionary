@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { RootState } from '../../store/store';
 
@@ -41,44 +41,55 @@ export const EditDictionary: React.FC<Props> = ({ dictionaryKey, handleBtn }) =>
     setEngWord('');
   }
 
+  useEffect(() => {
+    document.body.classList.add('is-clipped');
+    return () => {
+      document.body.classList.remove('is-clipped');
+    }
+  }, [])
+
+
   return (
-    <article className="edit-dictionary">
-      <div className="edit-dictionary__dictionary">
-        <Dictionary
-          name={dictionaryKey}
-          dictionary={dictionary}
-          background={editDictionaryColor}
-          handleBtn={handleBtn}
-        />
-
-        <div className="edit-dictionary__input-words">
-          <Input
-            label="English word"
-            placeHolder="Enter english word"
-            value={engWord}
-            handleInput={(newValue: string) => setEngWord(newValue)}
-            icon="fa-solid fa-language"
-            error={engWord === ''}
-            errorMessage="The field must be filled"
+    <article className="edit-dictionary modal is-active">
+      <div className="modal-background"></div>
+      <div className="modal-content">
+        <div className="edit-dictionary__dictionary">
+          <Dictionary
+            name={dictionaryKey}
+            dictionary={dictionary}
+            background={editDictionaryColor}
+            handleBtn={handleBtn}
           />
 
-          <Input
-            label="Ukraine word"
-            placeHolder="Enter ukraine word"
-            value={ukrWord}
-            handleInput={(newValue: string) => setUkrWord(newValue)}
-            icon="fa-solid fa-language"
-            error={ukrWord === ''}
-            errorMessage="The field must be filled"
-          />
+          <div className="edit-dictionary__input-words">
+            <Input
+              label="English word"
+              placeHolder="Enter english word"
+              value={engWord}
+              handleInput={(newValue: string) => setEngWord(newValue)}
+              icon="fa-solid fa-language"
+              error={engWord === ''}
+              errorMessage="The field must be filled"
+            />
 
-          <ControlPanel
-            handleSubmit={handleSubmit}
-            handleReset={handleReset}
-            isDisable={ukrWord === '' || engWord === ''}
-          />
+            <Input
+              label="Ukraine word"
+              placeHolder="Enter ukraine word"
+              value={ukrWord}
+              handleInput={(newValue: string) => setUkrWord(newValue)}
+              icon="fa-solid fa-language"
+              error={ukrWord === ''}
+              errorMessage="The field must be filled"
+            />
+
+            <ControlPanel
+              handleSubmit={handleSubmit}
+              handleReset={handleReset}
+              isDisable={ukrWord === '' || engWord === ''}
+            />
+          </div>
         </div>
       </div>
-    </article >
+    </article>
   );
 };
