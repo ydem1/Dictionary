@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { useSelector } from "react-redux";
-import { Dictionary } from "./components";
+import { Dictionary } from "../../components/dictionary";
 
 import './dictionary.page.scss';
 import { RootState } from "../../store/store";

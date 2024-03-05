@@ -3,18 +3,22 @@ import React from "react";
 
 type Props = {
   label: string,
+  placeHolder: string,
   value: string,
   handleInput: (newValue: string) => void,
   icon: string,
-  Error: boolean,
+  error: boolean,
+  errorMessage: string,
 };
 
 export const Input: React.FC<Props> = ({
   label,
+  placeHolder,
   value,
   handleInput,
   icon,
-  Error,
+  error,
+  errorMessage,
 }) => {
 
 
@@ -25,11 +29,11 @@ export const Input: React.FC<Props> = ({
         <input
           className={classNames(
             'input',
-            { 'is-success': !Error && value !== '' },
-            { 'is-danger': Error },
+            { 'is-success': !error && value !== '' },
+            { 'is-danger': error },
           )}
           type="text"
-          placeholder="Text input"
+          placeholder={placeHolder}
           onChange={(event) => handleInput(event.target.value)}
           value={value}
         />
@@ -40,14 +44,14 @@ export const Input: React.FC<Props> = ({
 
         <span className="icon is-small is-right">
           <i className={classNames(
-            { 'fas fa-check': !Error && value !== '' },
-            { 'fa-solid fa-triangle-exclamation': Error },
+            { 'fas fa-check': !error && value !== '' },
+            { 'fa-solid fa-triangle-exclamation': error },
           )}/>
         </span>
       </div>
 
-      {Error && <p className="help is-danger">A dictionary with this name has already been created</p>}
-      {!Error && value !== '' && <p className="help is-success">This username is available</p>}
+      {error && <p className="help is-danger">{errorMessage}</p>}
+      {!error && value !== '' && <p className="help is-success">This input is available</p>}
     </div>
   );
 };

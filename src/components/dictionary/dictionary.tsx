@@ -1,8 +1,8 @@
 import React from 'react';
 import classNames from 'classnames';
 
-import { editDictionaryColor } from '../../../constants/colors';
-import { Dictionaries } from '../../../types/Dictionary';
+import { editDictionaryColor } from '../../constants/colors';
+import { Dictionaries } from '../../types/Dictionary';
 
 import './dictionary.scss';
 

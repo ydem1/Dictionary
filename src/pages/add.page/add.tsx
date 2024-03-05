@@ -1,11 +1,12 @@
 import { useState } from "react";
 // import { Dictionaries } from "../../types/Dictionary";
-import { Input } from "../../components/input/input";
+import { Input } from "../../components/input";
 import { useDispatch, useSelector } from "react-redux";
 import { initNewDictionary } from "../../slices/dictionarysSlice";
 import { RootState } from "../../store/store";
 
 import './add.scss';
+import { ControlPanel } from "../../components/control.panel";
 
 export const AddPage = () => {
   // const [newWords, setNewWords] = useState<Dictionaries[]>([]);
@@ -29,31 +30,19 @@ export const AddPage = () => {
     <section className="add-page box">
       <Input
         label="New dictionary name"
+        placeHolder="Enter name"
         value={dictionaryName}
         handleInput={(newValue: string) => setDictionaryName(newValue)}
         icon="fa-solid fa-republican"
-        Error={isError}
+        error={isError}
+        errorMessage="A dictionary with this name has already been created"
       />
 
-      <div className="field is-grouped">
-        <div className="control">
-          <button
-            onClick={handleSubmit}
-            disabled={dictionaryName === '' || isError}
-            className="button is-link"
-          >
-            Submit
-          </button>
-        </div>
-        <div className="control">
-          <button
-            className="button is-link is-light"
-            onClick={handleReset}
-          >
-            Cancel
-          </button>
-        </div>
-      </div>
+      <ControlPanel
+        handleSubmit={handleSubmit}
+        handleReset={handleReset}
+        isDisable={dictionaryName === '' || isError}
+      />
     </section>
   );
 };
