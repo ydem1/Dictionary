@@ -48,6 +48,16 @@
     margin-block: 4px;
   }
 
+  &__rigth-side {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+
+  &__btn-delete {
+    @include hover(transform, scale(1.5))
+  }
+
   &__separator {
     width: 100%;
     height: 0.1px;

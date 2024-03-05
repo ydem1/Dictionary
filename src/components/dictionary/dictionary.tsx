@@ -5,6 +5,8 @@ import { editDictionaryColor } from '../../constants/colors';
 import { Dictionaries } from '../../types/Dictionary';
 
 import './dictionary.scss';
+import { useDispatch } from 'react-redux';
+import { removeWordToDictionary } from '../../slices/dictionarysSlice';
 
 type Props = {
   name: string,
@@ -19,7 +21,8 @@ export const Dictionary: React.FC<Props> = ({
   background,
   handleBtn,
 }) => {
-  const isCloseIcon = background === editDictionaryColor;
+  const dispatch = useDispatch();
+  const isEdit = background === editDictionaryColor;
 
   return (
     <article className="dictionary">
@@ -35,8 +38,8 @@ export const Dictionary: React.FC<Props> = ({
           <span className="icon is-small is-left">
 
             <i className={classNames(
-              { 'fa-regular fa-pen-to-square': !isCloseIcon },
-              { 'fa-regular fa-circle-xmark': isCloseIcon },
+              { 'fa-regular fa-pen-to-square': !isEdit },
+              { 'fa-regular fa-circle-xmark': isEdit },
             )} />
           </span>
         </button>
@@ -52,7 +55,7 @@ export const Dictionary: React.FC<Props> = ({
             Ukraine
           </h4>
         </li>
-        {dictionary.map(item => (
+        {dictionary.map((item, index) => (
           <li
             key={`id:${item.eng}${item.ukr}`}
             className="dictionary__words"
@@ -61,9 +64,20 @@ export const Dictionary: React.FC<Props> = ({
               {item.eng}
             </p>
 
-            <p className="dictionary__ukr">
-              {item.ukr}
-            </p>
+            <div className="dictionary__rigth-side">
+              <p className="dictionary__ukr">
+                {item.ukr}
+              </p>
+
+              {isEdit && (
+                <button
+                  onClick={() => dispatch(removeWordToDictionary({ key: name, indexRemove: index }))}
+                  className="dictionary__btn-delete"
+                >
+                  <i className="fa-solid fa-trash fa-2xs" />
+                </button>
+              )}
+            </div>
           </li>
         ))}
 

@@ -2,15 +2,13 @@ import { useEffect, useMemo, useState } from "react";
 import { useSelector } from "react-redux";
 import { useNavigate, useParams } from "react-router-dom";
 import { RootState } from "../../../store/store";
+import classNames from "classnames";
 
 import { shuffleArray } from "../../../constants/shuffleArray";
+import { COUNT_OPTINALS, COUNT_TASKS } from "../../../constants/game";
 import { NotFoundPage } from "../../not.found.page";
 
 import './game.scss';
-import classNames from "classnames";
-
-const COUNT_TASKS = 10;
-const COUNT_OPTINALS = 4;
 
 export const Game = () => {
   const { dictionary = '' } = useParams();
