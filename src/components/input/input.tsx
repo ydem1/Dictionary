@@ -35,15 +35,14 @@ export const Input: React.FC<Props> = ({
         />
 
         <span className="icon is-small is-left">
-          <i className={icon}></i>
+          <i className={icon} />
         </span>
 
         <span className="icon is-small is-right">
           <i className={classNames(
             { 'fas fa-check': !Error && value !== '' },
             { 'fa-solid fa-triangle-exclamation': Error },
-
-          )}></i>
+          )}/>
         </span>
       </div>
 
@@ -52,4 +51,3 @@ export const Input: React.FC<Props> = ({
     </div>
   );
 };
-{/* <i class="fa-solid fa-triangle-exclamation"></i> */ }

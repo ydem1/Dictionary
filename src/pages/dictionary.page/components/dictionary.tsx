@@ -1,19 +1,46 @@
 import React from 'react';
+import classNames from 'classnames';
+
+import { editDictionaryColor } from '../../../constants/colors';
 import { Dictionaries } from '../../../types/Dictionary';
+
 import './dictionary.scss';
 
 type Props = {
   name: string,
   dictionary: Dictionaries[],
   background: string,
+  handleBtn: (currentDictionary: string) => void,
 }
 
-export const Dictionary: React.FC<Props> = ({ name, dictionary, background }) => {
+export const Dictionary: React.FC<Props> = ({
+  name,
+  dictionary,
+  background,
+  handleBtn,
+}) => {
+  const isCloseIcon = background === editDictionaryColor;
+
   return (
     <article className="dictionary">
-      <h3 className="dictionary__name" style={{background: background}}>
-        {name}
-      </h3>
+      <div className="dictionary__header" style={{ background: background }}>
+        <h3 className="dictionary__name">
+          {name}
+        </h3>
+
+        <button
+          onClick={() => handleBtn(name)}
+          className="dictionary__btn"
+        >
+          <span className="icon is-small is-left">
+
+            <i className={classNames(
+              { 'fa-regular fa-pen-to-square': !isCloseIcon },
+              { 'fa-regular fa-circle-xmark': isCloseIcon },
+            )} />
+          </span>
+        </button>
+      </div>
 
       <ul className="dictionary__list">
         <li className="dictionary__title">
@@ -53,7 +80,6 @@ export const Dictionary: React.FC<Props> = ({ name, dictionary, background }) =>
           </div>
         </li>
       </ul>
-
     </article>
   );
 };

@@ -26,7 +26,7 @@ export const AddPage = () => {
   };
 
   return (
-    <section className="add-page">
+    <section className="add-page box">
       <Input
         label="New dictionary name"
         value={dictionaryName}

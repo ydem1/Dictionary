@@ -1,0 +1,31 @@
+@import '../../style/utils.scss';
+
+.edit-dictionary {
+  position: absolute;
+  // top: 50%;
+  // left: 50%;
+  // transform: translate(-50%, -50%);
+  // width: 50%;
+
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+
+  background-color: rgba(0, 0, 0, 0.5);
+
+  &__dictionary {
+    position: absolute;
+
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    width: 50%;
+    max-width: 400px;
+    
+    border-radius: 8px;
+
+    background-color: $background-color;
+  }
+}

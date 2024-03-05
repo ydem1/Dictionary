@@ -68,10 +68,23 @@ export const dictionarysSlice = createSlice({
       }
 
       state.value[key] = [];
+    },
+    addWordToDictionary: (state, action: PayloadAction<{ key: string; words: Dictionaries }>) => {
+      const { key, words } = action.payload;
+
+      if (!state.value[key]) {
+        throw new Error(`Dictionary with key ${key} don't already exists.`);
+      }
+
+      state.value[key] = [
+        ...state.value[key],
+        words,
+      ];
+
     }
   },
 })
 
-export const { initNewDictionary } = dictionarysSlice.actions
+export const { initNewDictionary, addWordToDictionary } = dictionarysSlice.actions
 
 export default dictionarysSlice.reducer

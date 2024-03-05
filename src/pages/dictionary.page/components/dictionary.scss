@@ -1,18 +1,21 @@
 @import '../../../style/utils.scss';
 
-.dictionary {
+.dictionary {  
   display: flex;
   flex-direction: column;
   gap: 8px;
 
-  margin: 8px;
+
+  &__header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    border-radius: 8px;
+    padding: 8px 16px;
+  }
 
   &__name {
-    border-radius: 8px;
-
-    //прописувати через React
-    padding: 8px 16px;
-
     color: $white-text-color;
     font-size: 12px;
     font-family: $manrope-regular;
