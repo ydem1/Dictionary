@@ -1,1 +1,1 @@
-export * from './dictionary.page.tsx';
+export * from './dictionary.page';

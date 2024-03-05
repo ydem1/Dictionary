@@ -1,0 +1,23 @@
+@import '../../style/utils.scss';
+
+.list {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+
+  padding: 10px;
+
+  &__item {
+    padding: 8px 16px 8px 16px;
+    border-radius: 8px;
+    @include hover(transform, scale(1.1));
+  }
+
+  &__btn {
+    display: flex;
+    justify-content: space-between;
+
+    color: $white-text-color;
+    width: 100%;
+  }
+}

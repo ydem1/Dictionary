@@ -11,12 +11,12 @@ import { EditDictionary } from "../../components/edit.dictionary";
 export const AddPage = () => {
   const [isEditDictionary, setIsEditDictionary] = useState(false);
 
-  const Dictionareis = useSelector((state: RootState) => state.dictionarys.value)
+  const dictionareis = useSelector((state: RootState) => state.dictionarys.value)
   const dispatch = useDispatch();
 
   const [dictionaryName, setDictionaryName] = useState('');
 
-  const isError = Object.keys(Dictionareis).some(key => key === dictionaryName);
+  const isError = Object.keys(dictionareis).some(key => key === dictionaryName);
 
   const handleSubmit = () => {
     dispatch(initNewDictionary({ key: dictionaryName }));

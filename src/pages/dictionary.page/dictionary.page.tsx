@@ -27,14 +27,14 @@ export const DictionaryPage = () => {
     <section className="dictionary-page">
       <ul className="dictionary-page__grid">
         {
-          Object.entries(dictionaries).map((dictionary, index) => (
+          Object.entries(dictionaries).map(([name, dictionary], index) => (
             <li
-              key={dictionary[0]}
+              key={name}
               className="dictionary-page__item"
             >
               <Dictionary
-                name={dictionary[0]}
-                dictionary={dictionary[1]}
+                name={name}
+                dictionary={dictionary}
                 background={colors[index % colors.length]}
                 handleBtn={handleEditBtn}
               />

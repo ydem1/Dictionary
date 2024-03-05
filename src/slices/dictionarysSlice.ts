@@ -3,50 +3,46 @@ import type { PayloadAction } from '@reduxjs/toolkit'
 import { Dictionaries } from '../types/Dictionary';
 
 const dictionaries = {
-  animals1: [
-    {
-      ukr: 'собака',
-      eng: 'dog',
-    },
-    {
-      ukr: 'кіт',
-      eng: 'cat',
-    },
-    {
-      ukr: 'птах',
-      eng: 'bird',
-    }
+  animals: [
+    { ukr: 'собака', eng: 'dog' },
+    { ukr: 'кіт', eng: 'cat' },
+    { ukr: 'птах', eng: 'bird' },
+    { ukr: 'кролик', eng: 'rabbit' },
+    { ukr: 'олень', eng: 'deer' },
+    { ukr: 'мавпа', eng: 'monkey' },
+    { ukr: 'слон', eng: 'elephant' },
+    { ukr: 'тигр', eng: 'tiger' },
+    { ukr: 'ведмідь', eng: 'bear' },
+    { ukr: 'лисиця', eng: 'fox' },
+    { ukr: 'олень', eng: 'elk' }
   ],
-  animals2: [
-    {
-      ukr: 'кролик',
-      eng: 'rabbit',
-    },
-    {
-      ukr: 'олень',
-      eng: 'deer',
-    },
-    {
-      ukr: 'мавпа',
-      eng: 'monkey',
-    }
+  food: [
+    { ukr: 'яблуко', eng: 'apple' },
+    { ukr: 'банан', eng: 'banana' },
+    { ukr: 'апельсин', eng: 'orange' },
+    { ukr: 'мандарин', eng: 'tangerine' },
+    { ukr: 'лимон', eng: 'lemon' },
+    { ukr: 'персик', eng: 'peach' },
+    { ukr: 'киві', eng: 'kiwi' },
+    { ukr: 'груша', eng: 'pear' },
+    { ukr: 'вишня', eng: 'cherry' },
+    { ukr: 'виноград', eng: 'grape' },
+    { ukr: 'ананас', eng: 'pineapple' }
   ],
-  animals3: [
-    {
-      ukr: 'слон',
-      eng: 'elephant',
-    },
-    {
-      ukr: 'тигр',
-      eng: 'tiger',
-    },
-    {
-      ukr: 'ведмідь',
-      eng: 'bear',
-    }
+  vacation: [
+    { ukr: 'пляж', eng: 'beach' },
+    { ukr: 'сонце', eng: 'sun' },
+    { ukr: 'море', eng: 'sea' },
+    { ukr: 'пальма', eng: 'palm tree' },
+    { ukr: 'плавати', eng: 'swim' },
+    { ukr: 'відпочивати', eng: 'relax' },
+    { ukr: 'готель', eng: 'hotel' },
+    { ukr: 'відпустка', eng: 'vacation' },
+    { ukr: 'екскурсія', eng: 'excursion' },
+    { ukr: 'пісок', eng: 'sand' },
+    { ukr: 'курорт', eng: 'resort' }
   ]
 };
-
 
 export interface DictionarysState {
   value: Record<string, Dictionaries[]>,

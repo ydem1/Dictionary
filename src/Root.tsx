@@ -1,4 +1,3 @@
-import React from 'react';
 import {
   HashRouter as Router,
   Routes,
@@ -6,11 +5,11 @@ import {
 } from 'react-router-dom';
 
 import { App } from './App';
-
-import { NotFoundPage } from './pages/not.found.page';
 import { DictionaryPage } from './pages/dictionary.page';
 import { AddPage } from './pages/add.page';
-import { MemorizationPage } from './pages/memorization.page/memorization.page';
+import { MemorizationPage } from './pages/memorization.page';
+import { Game } from './pages/memorization.page/game';
+import { NotFoundPage } from './pages/not.found.page';
 
 export const Root = () => (
   <Router>
@@ -19,7 +18,7 @@ export const Root = () => (
         <Route index element={<DictionaryPage />} />
         <Route path="/add" element={<AddPage />} />
         <Route path="/memorization" element={<MemorizationPage />} />
-
+        <Route path="/memorization/game" element={<Game />} />
         <Route path="*" element={<NotFoundPage />} />
       </Route>
     </Routes>
