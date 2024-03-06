@@ -27,7 +27,7 @@ export const ControlPanel: React.FC<Props> = ({
           className="button is-link is-light"
           onClick={handleReset}
         >
-          Cancel
+          Clear
         </button>
       </div>
     </div>

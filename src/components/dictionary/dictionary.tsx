@@ -6,7 +6,7 @@ import { Dictionaries } from '../../types/Dictionary';
 
 import './dictionary.scss';
 import { useDispatch } from 'react-redux';
-import { removeWordToDictionary } from '../../slices/dictionarysSlice';
+import { removeDictionary, removeWordToDictionary } from '../../slices/dictionarysSlice';
 
 type Props = {
   name: string,
@@ -23,6 +23,11 @@ export const Dictionary: React.FC<Props> = ({
 }) => {
   const dispatch = useDispatch();
   const isEdit = background === editDictionaryColor;
+
+  const handleClearDictionary = () => {
+    dispatch(removeDictionary({ key: name }));
+    handleBtn(name);
+  };
 
   return (
     <article className="dictionary">
@@ -72,7 +77,7 @@ export const Dictionary: React.FC<Props> = ({
               {isEdit && (
                 <button
                   onClick={() => dispatch(removeWordToDictionary({ key: name, indexRemove: index }))}
-                  className="dictionary__btn-delete"
+                  className="dictionary__btn"
                 >
                   <i className="fa-solid fa-trash fa-2xs" />
                 </button>
@@ -91,6 +96,15 @@ export const Dictionary: React.FC<Props> = ({
             <p className="dictionary__total-value">
               {dictionary.length}
             </p>
+
+            {isEdit && (
+              <button
+                onClick={handleClearDictionary}
+                className="dictionary__btn"
+              >
+                <i className="fa-solid fa-delete-left" />
+              </button>
+            )}
           </div>
         </li>
       </ul>

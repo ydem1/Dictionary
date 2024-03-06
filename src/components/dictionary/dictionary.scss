@@ -54,7 +54,7 @@
     gap: 8px;
   }
 
-  &__btn-delete {
+  &__btn {
     @include hover(transform, scale(1.5))
   }
 

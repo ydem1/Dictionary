@@ -61,7 +61,6 @@ const dictionaries = {
   ]
 };
 
-
 export interface DictionarysState {
   value: Record<string, Dictionaries[]>,
 }
@@ -82,6 +81,15 @@ export const dictionarysSlice = createSlice({
       }
 
       state.value[key] = [];
+    },
+    removeDictionary: (state, action: PayloadAction<{ key: string }>) => {
+      const { key } = action.payload;
+
+      if (!state.value[key]) {
+        throw new Error(`Dictionary with key ${key} don't already exists.`);
+      }
+
+      delete state.value[key];
     },
     addWordToDictionary: (state, action: PayloadAction<{ key: string; words: Dictionaries }>) => {
       const { key, words } = action.payload;
@@ -111,6 +119,11 @@ export const dictionarysSlice = createSlice({
   },
 })
 
-export const { initNewDictionary, addWordToDictionary, removeWordToDictionary } = dictionarysSlice.actions
+export const {
+  initNewDictionary,
+  removeDictionary,
+  addWordToDictionary,
+  removeWordToDictionary,
+} = dictionarysSlice.actions
 
 export default dictionarysSlice.reducer
