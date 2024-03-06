@@ -8,7 +8,7 @@ import { App } from './App';
 import { DictionaryPage } from './pages/dictionary.page';
 import { AddPage } from './pages/add.page';
 import { MemorizationPage } from './pages/memorization.page';
-import { Game } from './pages/memorization.page/game';
+import { Game } from './pages/memorization.page/quiz';
 import { NotFoundPage } from './pages/not.found.page';
 
 export const Root = () => (

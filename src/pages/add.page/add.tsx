@@ -1,15 +1,18 @@
 import { useState } from "react";
-import { Input } from "../../components/input";
+import { useNavigate } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { initNewDictionary } from "../../slices/dictionarysSlice";
 import { RootState } from "../../store/store";
 
-import './add.scss';
+import { Input } from "../../components/input";
 import { ControlPanel } from "../../components/control.panel";
 import { EditDictionary } from "../../components/edit.dictionary";
 
+import './add.scss';
+
 export const AddPage = () => {
   const [isEditDictionary, setIsEditDictionary] = useState(false);
+  const navigate = useNavigate()
 
   const dictionareis = useSelector((state: RootState) => state.dictionarys.value)
   const dispatch = useDispatch();
@@ -29,6 +32,7 @@ export const AddPage = () => {
 
   const handleClickBtn = () => {
     setIsEditDictionary(false);
+    navigate('../');
     handleReset();
   }
 

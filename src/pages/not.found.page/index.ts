@@ -1,1 +1,1 @@
-export * from './not.found.page.tsx';
+export * from './not.found.page';

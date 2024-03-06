@@ -8,7 +8,7 @@ import { shuffleArray } from "../../../constants/shuffleArray";
 import { COUNT_OPTINALS, COUNT_TASKS } from "../../../constants/game";
 import { NotFoundPage } from "../../not.found.page";
 
-import './game.scss';
+import './quiz.scss';
 
 export const Game = () => {
   const { dictionary = '' } = useParams();
@@ -84,29 +84,29 @@ export const Game = () => {
   }
 
   return (
-    <section className="game">
-      <article className="game__article">
-        <h2 className="game__name">{dictionary}</h2>
+    <section className="quiz">
+      <article className="quiz__article">
+        <h2 className="quiz__name">{dictionary}</h2>
 
-        <div className="game__filed">
-          <ul className="game__list">
+        <div className="quiz__filed">
+          <ul className="quiz__list">
             {
               game.map(({ question, answers }) => (
                 <li
                   key={question}
-                  className="game__item"
+                  className="quiz__item"
                   style={{
                     translate: `${-100 * indexQuestion}%`,
                   }}
                 >
-                  <div className="game__main">
-                    <h3 className="game__eng">
+                  <div className="quiz__main">
+                    <h3 className="quiz__eng">
                       {question}
                     </h3>
                   </div>
 
-                  <div className="game__bottom">
-                    <ul className="game__answers answers">
+                  <div className="quiz__bottom">
+                    <ul className="quiz__answers answers">
                       {answers.map((answer) => (
                         <li key={`${question}-${answer}`} className="answers__item">
                           <input
@@ -125,8 +125,8 @@ export const Game = () => {
                       onClick={handlebtnNext}
                       disabled={!answerCurrent}
                       className={classNames(
-                        'game__btn-next',
-                        { 'game__btn-next--disable': !answerCurrent },
+                        'quiz__btn-next',
+                        { 'quiz__btn-next--disable': !answerCurrent },
                       )}
                     >
                       {COUNT_TASKS !== indexQuestion + 1 ? 'Ok' : 'Finish'}
@@ -140,7 +140,7 @@ export const Game = () => {
       </article>
 
       {result !== -1 && (
-        <article className="game__result result">
+        <article className="quiz__result result">
           <div className="result__box">
             <div className="result__header">
               <h2 className="result__title">
