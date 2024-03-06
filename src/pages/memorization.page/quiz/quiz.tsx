@@ -4,7 +4,7 @@ import { useNavigate, useParams } from "react-router-dom";
 import { RootState } from "../../../store/store";
 import classNames from "classnames";
 
-import { shuffleArray } from "../../../constants/shuffleArray";
+import { shuffleArray } from "../../../functions/shuffleArray";
 import { COUNT_OPTINALS, COUNT_TASKS } from "../../../constants/game";
 import { NotFoundPage } from "../../not.found.page";
 
