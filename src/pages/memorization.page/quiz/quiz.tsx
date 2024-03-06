@@ -91,7 +91,7 @@ export const Game = () => {
         <div className="quiz__filed">
           <ul className="quiz__list">
             {
-              game.map(({ question, answers }) => (
+              game.map(({ question, answers }, index ) => (
                 <li
                   key={question}
                   className="quiz__item"
@@ -103,6 +103,8 @@ export const Game = () => {
                     <h3 className="quiz__eng">
                       {question}
                     </h3>
+
+                    <p className="quiz__process">{`${index + 1}/${COUNT_TASKS}`}</p>
                   </div>
 
                   <div className="quiz__bottom">
