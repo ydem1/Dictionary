@@ -129,7 +129,7 @@ export const Game = () => {
                         { 'quiz__btn-next--disable': !answerCurrent },
                       )}
                     >
-                      {COUNT_TASKS !== indexQuestion + 1 ? 'Ok' : 'Finish'}
+                      {COUNT_TASKS !== indexQuestion + 1 ? 'Next' : 'Finish'}
                     </button>
                   </div>
                 </li>

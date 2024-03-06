@@ -1,6 +1,6 @@
 @import '../../style/utils.scss';
 
-.dictionary {  
+.dictionary {
   display: flex;
   flex-direction: column;
   gap: 8px;
@@ -17,7 +17,6 @@
   &__name {
     color: $white-text-color;
     font-size: 12px;
-    font-family: $manrope-regular;
   }
 
   &__list {
@@ -31,7 +30,7 @@
     justify-content: space-between;
 
     font-size: 12px;
-    font-family: $manrope-regular;
+
 
     margin-bottom: 8px;
   }
@@ -41,8 +40,7 @@
     justify-content: space-between;
 
     color: $secondary-color;
-    font-size: 10px;
-    font-family: $manrope-light;
+    font-size: 13px;
     line-height: 14px;
 
     margin-block: 4px;
@@ -71,7 +69,6 @@
     gap: 16px;
 
     color: $main-text-color;
-    font-size: 10px;
-    font-family: $manrope-light;
+    font-size: 13px;
   }
 }

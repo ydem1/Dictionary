@@ -8,7 +8,8 @@
   &__logo {
     font-size: 14px;
     line-height: 20px;
-    font-family: $manrope-medium;
+    
+    font-weight: 600;
     margin-bottom: 20px;
   }
 
@@ -20,7 +21,6 @@
   &__item {
     color: $secondary-color;
     font-size: 12px;
-    font-family: $manrope-regular;
     line-height: 20px;
     text-transform: uppercase;
   }
