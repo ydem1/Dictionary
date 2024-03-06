@@ -1,30 +1,26 @@
-# React + TypeScript + Vite
+# Welcome to Dictionary Project
+This project allows you to create and manage dictionaries, as well as play a quiz game based on the selected dictionary.
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+# Features
+1. Create and Manage Dictionaries: You can create new dictionaries and edit existing ones easily.
+2. Quiz Game: Select a dictionary and take a quiz based on it. The game randomly selects 10 words from the chosen dictionary, and you need to provide the correct definitions.
 
-Currently, two official plugins are available:
+# How to Play Quiz
+1. Choose a dictionary from the list of available dictionaries.
+2. Start the quiz.
+3. You will be presented with 10 words, one at a time.
+4. Type in your definition for each word.
+5. Once you're done, submit your answers.
+6. You will receive your score and see which words you answered correctly and incorrectly.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+# Technologies Used
+- React
+- TypeScript
+- Redux Toolkit
+- SCSS
+- Bulma
 
-## Expanding the ESLint configuration
+# Contributing
+Contributions are welcome! If you find any bugs or have suggestions for improvements, feel free to open an issue or submit a pull request.
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
-
-- Configure the top-level `parserOptions` property like this:
-
-```js
-export default {
-  // other rules...
-  parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json'],
-    tsconfigRootDir: __dirname,
-  },
-}
-```
-
-- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
-- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
+# [DEMO LINK](https://ydem1.github.io/dictionary/)
