@@ -24,6 +24,18 @@ export const EditDictionary: React.FC<Props> = ({ dictionaryKey, handleBtn }) =>
   const [engWord, setEngWord] = useState('');
   const [ukrWord, setUkrWord] = useState('');
 
+  const isValidWordEng = (word: string): boolean => {
+    const regex = /^[a-zA-Z\s-]*$/;
+
+    return regex.test(word);
+  };
+
+  function isValidWordUkr(word: string): boolean {
+    const regex = /^[а-яА-ЯїЇіІєЄґҐ\s-]*$/;
+
+    return regex.test(word);
+  }
+
   const handleSubmit = () => {
     dispatch(addWordToDictionary({
       key: dictionaryKey,
@@ -48,7 +60,6 @@ export const EditDictionary: React.FC<Props> = ({ dictionaryKey, handleBtn }) =>
     }
   }, [])
 
-
   return (
     <article className="edit-dictionary modal is-active">
       <div className="modal-background"></div>
@@ -68,8 +79,8 @@ export const EditDictionary: React.FC<Props> = ({ dictionaryKey, handleBtn }) =>
               value={engWord}
               handleInput={(newValue: string) => setEngWord(newValue)}
               icon="fa-solid fa-language"
-              error={engWord === ''}
-              errorMessage="The field must be filled"
+              error={!isValidWordEng(engWord)}
+              errorMessage="Enter the word in Latin and check for numbers or special characters"
             />
 
             <Input
@@ -78,8 +89,8 @@ export const EditDictionary: React.FC<Props> = ({ dictionaryKey, handleBtn }) =>
               value={ukrWord}
               handleInput={(newValue: string) => setUkrWord(newValue)}
               icon="fa-solid fa-language"
-              error={ukrWord === ''}
-              errorMessage="The field must be filled"
+              error={!isValidWordUkr(ukrWord)}
+              errorMessage="Enter the word in Cyrillic and check for numbers or special characters"
             />
 
             <ControlPanel

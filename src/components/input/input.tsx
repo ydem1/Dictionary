@@ -21,7 +21,6 @@ export const Input: React.FC<Props> = ({
   errorMessage,
 }) => {
 
-
   return (
     <div className="field">
       <label className="label">{label}</label>
